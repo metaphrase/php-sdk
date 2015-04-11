@@ -52,6 +52,5 @@ try {
     die();
 }
 print_r($translated);
-
 ```
 

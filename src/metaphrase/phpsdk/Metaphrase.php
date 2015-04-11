@@ -2,6 +2,7 @@
 
 namespace metaphrase\phpsdk;
 
+use metaphrase\phpsdk\MetaphraseException;
 /**
  * Metaphrase class
  * 

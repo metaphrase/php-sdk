@@ -5,6 +5,7 @@
     "type": "library",
     "keywords": [
     ],
+    "version" : "0.0.1",
     "homepage": "https://translate.nohponex.gr",
     "authors": [
         {
@@ -13,7 +14,6 @@
             "homepage": "https://nohponex.gr"
         }
     ],
-    "version" : "0.0.1",
     "autoload": {
         "psr-4": {
             "metaphrase\\": "src/metaphrase"

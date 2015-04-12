@@ -42,14 +42,13 @@ $settings = [
     'project_id' => 1
 ];
 
-try{
-$metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY']);
+try {
+    $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY']);
 
-$translated = $metaphrase->fetch(
-    $settings['project_id'], $settings['language_code']);
-
-}catch(metaphrase\phpsdk\MetaphraseException $e){
-    print( $e->getMessage( ) );
+    $translated = $metaphrase->fetch(
+        $settings['project_id'], $settings['language_code']);
+} catch (metaphrase\phpsdk\MetaphraseException $e) {
+    print( $e->getMessage());
     die();
 }
 print_r($translated);

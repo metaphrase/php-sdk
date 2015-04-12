@@ -14,19 +14,20 @@ use metaphrase\phpsdk\MetaphraseException;
  * @package metaphrase
  * @subpackage phpsdk
  * @copyright TBA
- * @version 001
+ * @version 004
  * @uses curl_init curl
  * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @todo Migrate to metaphrase api
  */
 class Metaphrase {
 
-    const VERSION = '0.0.1';
-    const VERSION_INTEGER = 001;
+    const VERSION = '0.0.4';
+    const VERSION_INTEGER = 004;
     const METHOD_GET = 'GET';
     const METHOD_POST = 'POST';
     const METHOD_DELETE = 'DELETE';
     const METHOD_PUT = 'PUT';
+    
     const REQUEST_EMPTY_FLAG = 0;
     const REQUEST_BINARY = 1;
     const REQUEST_NOT_URL_ENCODED = 2;
@@ -37,7 +38,9 @@ class Metaphrase {
     private $API_URL = 'https://translate.nohponex.gr/';
     private $authentication_credentials = FALSE;
     private $authentication_header = FALSE;
-
+    
+    public $keyword;
+    
     /**
      * Project's API KEY
      */
@@ -52,6 +55,8 @@ class Metaphrase {
     public function __construct($api_key, $useSSL = FALSE) {
         //Set API key
         $this->api_key = $api_key;
+        
+        $this->keyword = new \metaphrase\phpsdk\controllers\keyword();
     }
 
     /**8

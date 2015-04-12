@@ -13,8 +13,12 @@ $settings = [
 ];
 
 try {
-    $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY']);
-
+    //Initialize Metaphrase class
+    $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY'],[
+        metaphrase\phpsdk\Metaphrase::SETTING_CURLOPT_CONNECTTIMEOUT => 0
+    ]);
+    
+    //Fetch translated keys
     $translated = $metaphrase->fetch(
         $settings['project_id'], $settings['language_code']);
     

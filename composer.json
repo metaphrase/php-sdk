@@ -4,8 +4,8 @@
     "license": "TBA",
     "type": "library",
     "keywords": [
+	"localization"
     ],
-    "version" : "0.0.1",
     "homepage": "https://translate.nohponex.gr",
     "authors": [
         {

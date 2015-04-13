@@ -1,4 +1,5 @@
 <?php
+
 namespace metaphrase\phpsdk\cache;
 
 /**
@@ -9,32 +10,108 @@ namespace metaphrase\phpsdk\cache;
  * @package metaphrase
  * @subpackage phpsdk
  * @todo Work in progress
+ * @todo clean old files
+ * @todo additional formats
  */
 class File implements \metaphrase\phpsdk\ICache {
-    
-    const SETTING_PATH       = 1;
-    const SETTING_FORMAT     = 2;
-    
+
+    private $path;
+    private $format;
+
     /**
      * Time to live in seconds
      */
-    const SETTING_TTL        = 3600;
-    private $settings;
-    
+    private $TTL = 3600;
+    private $debug = FALSE;
+
     /**
      * Initialize cache engine
      */
-    public function __construct($settings) {
-        throw new \Exception('not implemented');
+    public function __construct($path, $format, $TTL = 3600, $debug = FALSE) {
+        $this->path = $path;
+        $this->format = $format;
+        $this->TTL = $TTL;
+        $this->debug = $debug;
+
+        if (!is_writable($path)) {
+            throw new \Exception($path . ' is not writeable!');
+        }
     }
-    public function store($id, $language_code, $data){
-        print_r(['store', $id, $language_code, $data]);
-        
-        return FALSE;
+
+    private function debug($data) {
+        if ($this->debug) {
+            print_r($data);
+        }
     }
-    public function fetch($id, $language_code){
-        print_r(['fetch', $id, $language_code]);
+
+    /**
+     * Create file path
+     * 
+     * @param integer $id
+     * @param string $language_code
+     * @return string File's path
+     */
+    private function file($id, $language_code, $type) {
+
+        $key = ($type . '-' . $id . '-' . $language_code); //sha1
+        $extension = '.phparray';
+
+        //prevent double slashes
+        $file_path = str_replace(
+            DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $this->path . DIRECTORY_SEPARATOR . $key . $extension
+        );
+
+        return $file_path;
+    }
+
+    /**
+     * Store translated data in egnine
+     * @param integer $id
+     * @param string $language_code
+     * @param array $data
+     * @param array $type Storage type [Optional] Default is project
+     */
+    public function store($id, $language_code, $data, $type= 'project') {
+        $this->debug(['store', $id, $language_code, ['type' => $type]]);
+
+        $file_path = $this->file($id, $language_code, $type);
         
+        if (file_exists($file_path)){
+            //Delete old file
+            unlink($file_path);
+        }
+
+        //Serialize data
+        $string_data = serialize($data);
+
+        //Store data
+        file_put_contents($file_path, $string_data);
+
+        $this->debug(['stored', filemtime($file_path), time('now')]);
+    }
+
+    /**
+     * Get stored translated data from engine
+     * @param integer $id
+     * @param string $language_code
+     * @param array $type Storage type [Optional] Default is project
+     * @return array|NULL Translated data
+     */
+    public function fetch($id, $language_code, $type= 'project') {
+        $this->debug(['fetch', $id, $language_code, ['type' => $type]]);
+
+        $file_path = $this->file($id, $language_code, $type);
+        
+        if (file_exists($file_path) &&
+            time('now') - filemtime($file_path) < $this->TTL) {
+            $this->debug(['hit', filemtime($file_path), time('now')]);
+
+            $data = unserialize(file_get_contents($file_path));
+
+            return $data;
+        }
+        $this->debug(['miss']);
         return NULL;
     }
+
 }

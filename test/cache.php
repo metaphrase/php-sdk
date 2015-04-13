@@ -1,5 +1,5 @@
+#!/usr/bin/php
 <?php
-
 /**
  * Demo
  */
@@ -10,12 +10,14 @@ print "\n\nMETAPHRASE TEST\nVersion: " . metaphrase\phpsdk\Metaphrase::VERSION .
 
 $settings = [
     'API_KEY' => '614a98a31bd17b3a82094ef0388b9d81',
-    'language_code' => 'en',
+    'language_code' => 'gr',
     'project_id' => 19
 ];
 
 try {
-    $cache_machine = new metaphrase\phpsdk\cache\Simple();
+    $cache_machine = new metaphrase\phpsdk\cache\File(
+        __DIR__ . '/file', 'phparray', 30, FALSE
+    );
 
     //Initialize Metaphrase class
     $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY'], [
@@ -26,15 +28,12 @@ try {
     $translated = $metaphrase->fetch(
         $settings['project_id'], $settings['language_code']);
 
-    print_r($translated);
-
     //Refetch
     $translated = $metaphrase->fetch(
         $settings['project_id'], $settings['language_code']);
-
-    print_r($translated);
 } catch (metaphrase\phpsdk\MetaphraseException $e) {
     print( $e->getMessage());
     die();
 }
 
+print_r($translated);

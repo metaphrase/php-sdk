@@ -19,6 +19,7 @@ use metaphrase\phpsdk\MetaphraseException;
  * @uses curl_init curl
  * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @todo Migrate to metaphrase api
+ * @todo Make sure it can be work as a script in order to assist other SDKs to download and cache the translated data
  */
 class Metaphrase {
 

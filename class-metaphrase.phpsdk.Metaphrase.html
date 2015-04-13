@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class metaphrase\phpsdk\Metaphrase | metaphrase/php-sdk</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">metaphrase/php-sdk</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-metaphrase.phpsdk.html" title="Summary of metaphrase\phpsdk"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-metaphrase.html">
+							metaphrase<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-metaphrase.phpsdk.html">
+							phpsdk<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-metaphrase.phpsdk.cache.html">
+							cache						</a>
+							</li>
+					<li>
+						<a href="namespace-metaphrase.phpsdk.controllers.html">
+							controllers						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-metaphrase.phpsdk.Metaphrase.html">Metaphrase</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-metaphrase.phpsdk.ICache.html">ICache</a></li>
+				<li><a href="class-metaphrase.phpsdk.MetaphraseException.html">MetaphraseException</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Metaphrase</h1>
+
+
+	<div class="description">
+	<p>Metaphrase class</p>
+
+<p>Create a new instance of this class by providing your authentication credentials
+And execute the available API methods</p>
+
+<p><strong>Currently uses old translate API</strong></p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a><br>
+		<b>Package:</b> metaphrase\phpsdk<br>
+
+				<b>Copyright:</b>
+				TBA<br>
+				<b>Copyright:</b>
+				(c) 2014-2015, Spafaridis Xenophon<br>
+				<b>Author:</b>
+				Spafaridis Xenophon <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;">&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;</a><br>
+				<b>Version:</b>
+				005<br>
+				<b>Uses:</b>
+				curl_init curl<br>
+				<b>Todo:</b>
+				Migrate to metaphrase api<br>
+				<b>Todo:</b>
+				Make sure it can be work as a script in order to assist other SDKs to download and cache the translated data<br>
+			<b>Located at</b> metaphrase/phpsdk/Metaphrase.php		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				Returns
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code>__construct( <span>string <var>$api_key</var></span>, <span>array <var>$settings</var> = []</span>, <span> <var>$cache_engine</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+			<div class="description short">
+				<p>Create a new instance of the class using user's email and password
+as authentication credentials</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create a new instance of the class using user's email and password
+as authentication credentials</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$api_key</var></dt>
+						<dd>Your API KEY</dd>
+						<dt><var>$settings</var></dt>
+						<dd></dd>
+						<dt><var>$cache_engine</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Returns<br>an instance of Translate
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetch" id="_fetch">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fetch">#</a>
+			<code>fetch( <span>integer <var>$project_id</var></span>, <span>string <var>$language_code</var></span>, <span>boolean <var>$use_cached</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+
+			<div class="description short">
+				<p>Get all translation keys</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get all translation keys</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$project_id</var></dt>
+						<dd>Project's id</dd>
+						<dt><var>$language_code</var></dt>
+						<dd>Lanuage Code</dd>
+						<dt><var>$use_cached</var></dt>
+						<dd>[Optional] If true, the SDK will attempt to use the selected cache machine. Default TRUE</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>Returns translation array for selected language
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-metaphrase.phpsdk.MetaphraseException.html">metaphrase\phpsdk\MetaphraseException</a></code><br>on failure
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="add_key" id="_add_key">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_add_key">#</a>
+			<code>add_key( <span>integer <var>$project_id</var></span>, <span>string <var>$keyword</var></span> )</code>
+
+			<div class="description short">
+				<p>Add keyword to a project</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add keyword to a project</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$project_id</var></dt>
+						<dd>Project's id</dd>
+						<dt><var>$keyword</var></dt>
+						<dd>Keyword</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>Returns TRUE on success
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-metaphrase.phpsdk.MetaphraseException.html">metaphrase\phpsdk\MetaphraseException</a></code><br>on failure
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="cache_update" id="_cache_update">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_cache_update">#</a>
+			<code>cache_update( <span>type <var>$project_id</var></span>, <span>type <var>$language_code</var></span> )</code>
+
+			<div class="description short">
+				<p>Cache helper task</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Cache helper task</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$project_id</var></dt>
+						<dd></dd>
+						<dt><var>$language_code</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="cache_clear" id="_cache_clear">
+
+			<td class="attributes"><code>
+				 public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_cache_clear">#</a>
+			<code>cache_clear( <span>type <var>$project_id</var></span>, <span>type <var>$language_code</var></span> )</code>
+
+			<div class="description short">
+				<p>Cache helper task</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Cache helper task</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$project_id</var></dt>
+						<dd></dd>
+						<dt><var>$language_code</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+		<table class="summary table table-bordered table-striped constants" id="constants">
+		<tr data-order="VERSION" id="VERSION">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name">
+				<code>
+<b>VERSION</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#VERSION" class="anchor">#</a>
+					<code><span class="php-quote">'0.0.5'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="VERSION_INTEGER" id="VERSION_INTEGER">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name">
+				<code>
+<b>VERSION_INTEGER</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#VERSION_INTEGER" class="anchor">#</a>
+					<code><span class="php-num">005</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="METHOD_GET" id="METHOD_GET">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name">
+				<code>
+<b>METHOD_GET</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#METHOD_GET" class="anchor">#</a>
+					<code><span class="php-quote">'GET'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="METHOD_HEAD" id="METHOD_HEAD">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name">
+				<code>
+<b>METHOD_HEAD</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#METHOD_HEAD" class="anchor">#</a>
+					<code><span class="php-quote">'HEAD'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="METHOD_POST" id="METHOD_POST">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name">
+				<code>
+<b>METHOD_POST</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#METHOD_POST" class="anchor">#</a>
+					<code><span class="php-quote">'POST'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="METHOD_DELETE" id="METHOD_DELETE">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name">
+				<code>
+<b>METHOD_DELETE</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#METHOD_DELETE" class="anchor">#</a>
+					<code><span class="php-quote">'DELETE'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="METHOD_PUT" id="METHOD_PUT">
+
+			<td class="attributes"><code>string</code></td>
+			<td class="name">
+				<code>
+<b>METHOD_PUT</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#METHOD_PUT" class="anchor">#</a>
+					<code><span class="php-quote">'PUT'</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="REQUEST_EMPTY_FLAG" id="REQUEST_EMPTY_FLAG">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name">
+				<code>
+<b>REQUEST_EMPTY_FLAG</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#REQUEST_EMPTY_FLAG" class="anchor">#</a>
+					<code><span class="php-num">0</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="REQUEST_BINARY" id="REQUEST_BINARY">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name">
+				<code>
+<b>REQUEST_BINARY</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#REQUEST_BINARY" class="anchor">#</a>
+					<code><span class="php-num">1</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="REQUEST_NOT_URL_ENCODED" id="REQUEST_NOT_URL_ENCODED">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name">
+				<code>
+<b>REQUEST_NOT_URL_ENCODED</b>				</code>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#REQUEST_NOT_URL_ENCODED" class="anchor">#</a>
+					<code><span class="php-num">2</span></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="SETTING_CURLOPT_CONNECTTIMEOUT" id="SETTING_CURLOPT_CONNECTTIMEOUT">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name">
+				<code>
+<b>SETTING_CURLOPT_CONNECTTIMEOUT</b>				</code>
+
+				<div class="description short">
+					<p>Setting CURLOPT_CONNECTTIMEOUT - timeout for the connect phase
+Pass a long. It should contain the maximum time in seconds that you allow
+the connection phase to the server to take.
+This only limits the connection phase, it has no impact once it has connected.
+Set to zero to switch to the default built-in connection timeout - 300 seconds.
+Default timeout is 300.</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Setting CURLOPT_CONNECTTIMEOUT - timeout for the connect phase
+Pass a long. It should contain the maximum time in seconds that you allow
+the connection phase to the server to take.
+This only limits the connection phase, it has no impact once it has connected.
+Set to zero to switch to the default built-in connection timeout - 300 seconds.
+Default timeout is 300.</p>
+
+						<h4>See</h4>
+						<div class="list">
+								CURLOPT_CONNECTTIMEOUT<br>
+						</div>
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#SETTING_CURLOPT_CONNECTTIMEOUT" class="anchor">#</a>
+					<code>CURLOPT_CONNECTTIMEOUT</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="SETTING_CURLOPT_TIMEOUT" id="SETTING_CURLOPT_TIMEOUT">
+
+			<td class="attributes"><code>integer</code></td>
+			<td class="name">
+				<code>
+<b>SETTING_CURLOPT_TIMEOUT</b>				</code>
+
+				<div class="description short">
+					<p>Setting CURLOPT_TIMEOUT - set maximum time the request is allowed to take</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Setting CURLOPT_TIMEOUT - set maximum time the request is allowed to take</p>
+
+<p>Pass a long as parameter containing timeout - the maximum time in seconds
+that you allow the libcurl transfer operation to take.
+Normally, name lookups can take a considerable time and limiting operations
+to less than a few minutes risk aborting perfectly normal operations.
+This option may cause libcurl to use the SIGALRM signal to timeout system calls.
+Default timeout is 0 (zero) which means it never times out during transfer.</p>
+
+						<h4>See</h4>
+						<div class="list">
+								CURLOPT_TIMEOUT<br>
+						</div>
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#SETTING_CURLOPT_TIMEOUT" class="anchor">#</a>
+					<code>CURLOPT_TIMEOUT</code>
+				</div>
+			</td>
+		</tr>
+		</table>
+
+
+
+
+		<h2>Properties summary</h2>
+		<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="keyword" id="$keyword">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+<var>$keyword</var>
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$keyword" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		</table>
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		metaphrase/php-sdk API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

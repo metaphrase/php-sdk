@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class metaphrase\phpsdk\cache\File | metaphrase/php-sdk</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
+	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
+
+</head>
+
+<body>
+	<div id="navigation" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="index.html" class="brand">metaphrase/php-sdk</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li>
+							<a href="namespace-metaphrase.phpsdk.cache.html" title="Summary of metaphrase\phpsdk\cache"><span>Namespace</span></a>
+						</li>
+						<li class="active">
+<span>Class</span>						</li>
+
+						<li class="divider-vertical"></li>
+
+						<li>
+							<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+						</li>
+						<li>
+							<a href="deprecated.html" title="List of deprecated elements"><span>Deprecated</span></a>
+						</li>
+						<li>
+							<a href="todo.html" title="Todo list"><span>Todo</span></a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="left">
+	<div id="menu">
+		<form id="search" class="form-search">
+			<input type="hidden" name="cx" value="">
+			<input type="hidden" name="ie" value="UTF-8">
+			<input type="text" name="q" class="search-query" placeholder="Search">
+		</form>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-metaphrase.html">
+							metaphrase<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-metaphrase.phpsdk.html">
+							phpsdk<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-metaphrase.phpsdk.cache.html">
+							cache						</a>
+							</li>
+					<li>
+						<a href="namespace-metaphrase.phpsdk.controllers.html">
+							controllers						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-metaphrase.phpsdk.cache.File.html">File</a></li>
+				<li><a href="class-metaphrase.phpsdk.cache.Simple.html">Simple</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class File</h1>
+
+
+	<div class="description">
+	<p>File cache</p>
+
+<p>Cache implementation using files.</p>
+	</div>
+
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>metaphrase\phpsdk\cache\File</span></b>			
+			 implements 
+				<a href="class-metaphrase.phpsdk.ICache.html"><span>metaphrase\phpsdk\ICache</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a>\<a href="namespace-metaphrase.phpsdk.cache.html">cache</a><br>
+		<b>Package:</b> metaphrase\phpsdk<br>
+
+				<b>Author:</b>
+				Spafaridis Xenophon <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;">&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;</a><br>
+				<b>Todo:</b>
+				Work in progress<br>
+				<b>Todo:</b>
+				clean old files<br>
+				<b>Todo:</b>
+				additional formats<br>
+			<b>Located at</b> metaphrase/phpsdk/cache/File.php		<br>
+	</div>
+
+
+
+		<h2>Methods summary</h2>
+		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code>__construct( <span> <var>$path</var></span>, <span> <var>$format</var></span>, <span> <var>$TTL</var> = <span class="php-num">3600</span></span>, <span> <var>$debug</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+			<div class="description short">
+				<p>Initialize cache engine</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initialize cache engine</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="store" id="_store">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_store">#</a>
+			<code>store( <span>integer <var>$id</var></span>, <span>string <var>$language_code</var></span>, <span>array <var>$data</var></span>, <span>array <var>$type</var> = metaphrase\phpsdk\cache\ICache::TYPE_PROJECT</span> )</code>
+
+			<div class="description short">
+				<p>Store translated data in egnine</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Store translated data in egnine</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd></dd>
+						<dt><var>$language_code</var></dt>
+						<dd></dd>
+						<dt><var>$data</var></dt>
+						<dd></dd>
+						<dt><var>$type</var></dt>
+						<dd>[Optional] Storage data type. Default is project</dd>
+					</dl></div>
+
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-metaphrase.phpsdk.ICache.html#_store">metaphrase\phpsdk\ICache::store()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetch" id="_fetch">
+
+			<td class="attributes"><code>
+				 public 
+				array|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fetch">#</a>
+			<code>fetch( <span>integer <var>$id</var></span>, <span>string <var>$language_code</var></span>, <span>array <var>$type</var> = metaphrase\phpsdk\cache\ICache::TYPE_PROJECT</span> )</code>
+
+			<div class="description short">
+				<p>Get stored translated data from engine</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get stored translated data from engine</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$id</var></dt>
+						<dd></dd>
+						<dt><var>$language_code</var></dt>
+						<dd></dd>
+						<dt><var>$type</var></dt>
+						<dd>[Optional] Storage data type. Default is project</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array|null<br>Translated data
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-metaphrase.phpsdk.ICache.html#_fetch">metaphrase\phpsdk\ICache::fetch()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		</table>
+
+
+
+		<h3>Magic methods summary</h3>
+
+
+
+
+
+		<h2>Constants summary</h2>
+
+		<h3>Constants inherited from <a href="class-metaphrase.phpsdk.ICache.html#constants">metaphrase\phpsdk\ICache</a></h3>
+		<p class="elementList">
+			<code><a href="class-metaphrase.phpsdk.ICache.html#TYPE_KEYWORD"><b>TYPE_KEYWORD</b></a></code>, 
+			<code><a href="class-metaphrase.phpsdk.ICache.html#TYPE_PROJECT"><b>TYPE_PROJECT</b></a></code>
+		</p>
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		metaphrase/php-sdk API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

@@ -2,10 +2,11 @@
 
 namespace metaphrase\phpsdk\cache;
 
+use \metaphrase\phpsdk\ICache;
 /**
  * File cache
  * 
- * Cache implementation using files
+ * Cache implementation using files.
  * @author Spafaridis Xenophon <nohponex@gmail.com>
  * @package metaphrase
  * @subpackage phpsdk
@@ -13,7 +14,7 @@ namespace metaphrase\phpsdk\cache;
  * @todo clean old files
  * @todo additional formats
  */
-class File implements \metaphrase\phpsdk\ICache {
+class File implements ICache {
 
     private $path;
     private $format;
@@ -69,14 +70,14 @@ class File implements \metaphrase\phpsdk\ICache {
      * @param integer $id
      * @param string $language_code
      * @param array $data
-     * @param array $type Storage type [Optional] Default is project
+     * @param array $type [Optional] Storage data type. Default is project
      */
-    public function store($id, $language_code, $data, $type= 'project') {
+    public function store($id, $language_code, $data, $type = ICache::TYPE_PROJECT) {
         $this->debug(['store', $id, $language_code, ['type' => $type]]);
 
         $file_path = $this->file($id, $language_code, $type);
-        
-        if (file_exists($file_path)){
+
+        if (file_exists($file_path)) {
             //Delete old file
             unlink($file_path);
         }
@@ -94,14 +95,14 @@ class File implements \metaphrase\phpsdk\ICache {
      * Get stored translated data from engine
      * @param integer $id
      * @param string $language_code
-     * @param array $type Storage type [Optional] Default is project
+     * @param array $type [Optional] Storage data type. Default is project
      * @return array|NULL Translated data
      */
-    public function fetch($id, $language_code, $type= 'project') {
+    public function fetch($id, $language_code, $type = ICache::TYPE_PROJECT) {
         $this->debug(['fetch', $id, $language_code, ['type' => $type]]);
 
         $file_path = $this->file($id, $language_code, $type);
-        
+
         if (file_exists($file_path) &&
             time('now') - filemtime($file_path) < $this->TTL) {
             $this->debug(['hit', filemtime($file_path), time('now')]);

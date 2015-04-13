@@ -11,21 +11,17 @@ class MetaphraseTest extends \PHPUnit_Framework_TestCase {
      * @var Metaphrase
      */
     protected $object;
-    
-    /**
-     * Hardcoded settings for Metaphrase
-     */
-    private $settings = [
-        'API_KEY' => '614a98a31bd17b3a82094ef0388b9d81',
-        'language_code' => 'gr',
-        'project_id' => 19
-    ];
+    protected $settings;
+
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        
+        //fwrite(STDOUT, __METHOD__ . "\n");
+        //Include settings file
+        $this->settings = include(dirname(dirname(dirname(__DIR__))) . '/settings.php');
+
         $this->object = new Metaphrase($this->settings['API_KEY']);
     }
 
@@ -42,18 +38,16 @@ class MetaphraseTest extends \PHPUnit_Framework_TestCase {
      * @expectedException metaphrase\phpsdk\MetaphraseException
      */
     public function testFetch() {
-        $translated = $this->object->fetch($this->settings['project_id'],
-            $this->settings['language_code']);
-        
+        $translated = $this->object->fetch(
+            $this->settings['project_id'], $this->settings['language_code']);
+
         $this->assertNotNull($translated);
         $this->assertInternalType('array', $translated, 'Expects array');
-        
+
         //Test negative
-        $empty = $this->object->fetch(1, 
-            'zn');
-        
+        $empty = $this->object->fetch(1, 'zn');
+
         $this->assertNull($empty);
-        
     }
 
     /**

@@ -88,9 +88,12 @@ class Metaphrase {
      * as authentication credentials
      * @param string $api_key Your API KEY
      * @param array $settings
+     * @param metaphrase\phpsdk\ICache $cache_engine
      * @return Returns an instance of Translate
      */
-    public function __construct($api_key, $settings = [], $cache_engine = NULL) {
+    public function __construct($api_key, $settings = [],
+        metaphrase\phpsdk\ICache $cache_engine = NULL) {
+        
         //Set API key
         $this->api_key = $api_key;
 

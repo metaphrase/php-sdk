@@ -16,11 +16,6 @@ At your composer.json file include:
         { "type": "vcs", "url": "git@github.com:metaphrase/php-sdk.git" }
     ],
     "require": {
-        "php": ">=5.5",
-        "lib-curl": ">=7.35.0",
-        "ext-pdo": ">=1.0.0",
-        "ext-pdo_pgsql": ">=1.0.2",
-        "ext-json": ">=1.3.6",
         "metaphrase/php-sdk": "dev-master"
     },
 ```
@@ -54,3 +49,5 @@ try {
 print_r($translated);
 ```
 
+Documentation
+http://metaphrase.github.io/php-sdk/

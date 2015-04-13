@@ -90,7 +90,7 @@ class Metaphrase {
      * @param array $settings
      * @return Returns an instance of Translate
      */
-    public function __construct($api_key, $settings = [], $cache_engine = TRUE) {
+    public function __construct($api_key, $settings = [], $cache_engine = NULL) {
         //Set API key
         $this->api_key = $api_key;
 
@@ -253,7 +253,7 @@ class Metaphrase {
         if ($use_cached && $r && isset($r['translation'])) {
             $this->cache_engine->store($project_id, $language_code, $r['translation']);
         }
-
+        
         return $r['translation'];
     }
 

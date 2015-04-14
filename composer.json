@@ -29,6 +29,6 @@
         "phpunit/phpunit-skeleton-generator": "*"
     },
     "archive": {
-        "exclude": ["demo/", "/*.test", "demo.php"]
+        "exclude": ["demo/", "test/", "/*.test", "tests", "demo.php"]
     }
 }

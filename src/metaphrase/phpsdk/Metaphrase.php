@@ -15,7 +15,7 @@ use metaphrase\phpsdk\MetaphraseException;
  * @package metaphrase
  * @subpackage phpsdk
  * @copyright TBA
- * @version 0.0.5
+ * @version 0.1.0
  * @uses curl_init curl
  * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @todo Migrate to metaphrase api
@@ -23,7 +23,7 @@ use metaphrase\phpsdk\MetaphraseException;
  */
 class Metaphrase {
 
-    const VERSION = '0.0.5';
+    const VERSION = '0.1.0';
     const METHOD_GET = 'GET';
     const METHOD_HEAD = 'HEAD';
     const METHOD_POST = 'POST';
@@ -74,23 +74,27 @@ class Metaphrase {
     private $API_URL = 'https://translate.nohponex.gr/';
     private $authentication_credentials = FALSE;
     private $authentication_header = FALSE;
+    
     public $keyword;
+    public $project;
+    public $translated;
 
     /**
      * Project's API KEY
      */
     private $api_key;
     private $cache_engine = NULL;
-
+    
+    
     /**
      * Create a new instance of the class using user's email and password
      * as authentication credentials
      * @param string $api_key Your API KEY
      * @param array $settings
-     * @param metaphrase\phpsdk\ICache $cache_engine
+     * @param \metaphrase\phpsdk\ICache $cache_engine
      * @return Returns an instance of Translate
      */
-    public function __construct($api_key, $settings = [], metaphrase\phpsdk\ICache $cache_engine = NULL) {
+    public function __construct($api_key, $settings = [], $cache_engine = NULL) {
 
         //Set API key
         $this->api_key = $api_key;
@@ -103,14 +107,15 @@ class Metaphrase {
         }
 
         //Setup controllers
-        $this->keyword = new \metaphrase\phpsdk\controllers\Keyword();
-        $this->project = new \metaphrase\phpsdk\controllers\Project();
-
+        $this->keyword = new \metaphrase\phpsdk\controllers\Keyword($this);
+        $this->project = new \metaphrase\phpsdk\controllers\Project($this);
+        $this->translated = new \metaphrase\phpsdk\controllers\Translated($this);
+        
         //Setup cache machine
         if ($cache_engine !== NULL) {
 
             //Check if extends interface
-            if (!is_subclass_of($cache_engine, 'metaphrase\phpsdk\ICache', TRUE)) {
+            if (!$cache_engine instanceof \metaphrase\phpsdk\ICache) {
                 throw new \Exception('metaphrase\phpsdk\ICache');
             }
             $this->cache_engine = $cache_engine;
@@ -124,7 +129,7 @@ class Metaphrase {
      * @return array Returns an array with the response code and the response,
      * if the accept parameter is set to json the the response will be decoded as json
      */
-    private function request($resource, $method = self::METHOD_GET, $data = NULL, $flags = self::REQUEST_EMPTY_FLAG, $accept = 'application/json', $encoding = NULL) {
+    public function request($resource, $method = self::METHOD_GET, $data = NULL, $flags = self::REQUEST_EMPTY_FLAG, $accept = 'application/json', $encoding = NULL) {
 
         //Construct request url
         $url = $this->API_URL . $resource . '&api_key=' . $this->api_key;
@@ -234,28 +239,10 @@ class Metaphrase {
      * @param string $language_code Lanuage Code
      * @param boolean $use_cached [Optional] If true, the SDK will attempt to use the selected cache machine. Default TRUE
      * @return array Returns translation array for selected language
+     * @deprecated since version 0.1.0 Use $this->translated
      */
     public function fetch($project_id, $language_code, $use_cached = TRUE) {
-
-        $use_cached &= $this->cache_engine !== NULL;
-        //Use cached
-        if ($use_cached) {
-            $cached = $this->cache_engine->fetch($project_id, $language_code);
-
-            if ($cached !== NULL) {
-                return $cached;
-            }
-        }
-
-        $p = array('id' => $project_id, 'language' => $language_code);
-
-        $r = $this->request(( 'fetch/listing?' . http_build_query($p)), self::METHOD_GET);
-
-        if ($use_cached && $r && isset($r['translation'])) {
-            $this->cache_engine->store($project_id, $language_code, $r['translation']);
-        }
-
-        return $r['translation'];
+        return $this->translated->fetch($project_id, $language_code, $use_cached);
     }
 
     /**
@@ -264,18 +251,10 @@ class Metaphrase {
      * @param integer $project_id Project's id
      * @param string $keyword Keyword
      * @return boolean Returns TRUE on success
+     * @deprecated since version 0.1.0 use $this->keyword->post
      */
     public function add_key($project_id, $keyword) {
-
-        $p = array('id' => $project_id, 'key' => $keyword);
-
-        try {
-            $r = $this->request('fetch/create?', self::METHOD_POST, $p);
-        } catch (MetaphraseException $e) {
-            //Key exists
-            return FALSE;
-        }
-        return TRUE;
+        return $this->keyword->post($project_id, $keyword);
     }
 
     /**
@@ -283,6 +262,7 @@ class Metaphrase {
      * 
      * @param type $project_id
      * @param type $language_code
+     * @todo implement
      */
     public static function cache_update($project_id, $language_code) {
         throw new \Exception('not implemented');
@@ -293,9 +273,17 @@ class Metaphrase {
      * 
      * @param type $project_id
      * @param type $language_code
+     * @todo implement
      */
     public static function cache_clear($project_id, $language_code) {
         throw new \Exception('not implemented');
     }
-
+    
+    /**
+     * Get current caching engine
+     * @return object|NULL
+     */
+    public function get_cache_engine(){
+        return $this->cache_engine;
+    }
 }

@@ -2,6 +2,9 @@
 
 namespace metaphrase\phpsdk\controllers;
 
+use \metaphrase\phpsdk\Metaphrase;
+use metaphrase\phpsdk\MetaphraseException;
+
 /**
  * projects controller
  * 
@@ -11,11 +14,23 @@ namespace metaphrase\phpsdk\controllers;
  * @subpackage phpsdk
  * @todo Work in progress
  */
-class project{
+class Project {
+
+    private $metaphrase;
+
+    /**
+     * Initialize class
+     * @param object $metaphrase
+     */
+    public function __construct(Metaphrase $metaphrase) {
+        $this->metaphrase = $metaphrase;
+    }
+
     /**
      * Add new project
      */
-    public function post(){
+    public function post() {
         throw new \Exception('not implemented');
     }
+
 }

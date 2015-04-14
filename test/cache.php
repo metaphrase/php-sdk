@@ -4,7 +4,7 @@
  * Demo
  */
 //Or replace your path to vendor
-require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 print "\n\nMETAPHRASE TEST\nVersion: " . metaphrase\phpsdk\Metaphrase::VERSION . "\n\n";
 
@@ -18,7 +18,7 @@ try {
     $cache_machine = new metaphrase\phpsdk\cache\File(
         __DIR__ . '/file', 'phparray', 30, FALSE
     );
-
+    
     //Initialize Metaphrase class
     $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY'], [
         metaphrase\phpsdk\Metaphrase::SETTING_CURLOPT_CONNECTTIMEOUT => 0

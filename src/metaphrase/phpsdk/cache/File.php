@@ -10,7 +10,6 @@ use \metaphrase\phpsdk\ICache;
  * @author Spafaridis Xenophon <nohponex@gmail.com>
  * @package metaphrase
  * @subpackage phpsdk
- * @todo Work in progress
  * @todo clean old files
  * @todo additional formats
  */
@@ -27,8 +26,11 @@ class File implements ICache {
 
     /**
      * Initialize cache engine
+     * @param string $path Temporary filesystem directory to store the translated data. MUST be writeable.
+     * @param string $format [Optional] Stored file format. Default is serialized php array
+     * @param integer $TTL [Optional] Life time of stored translated data.
      */
-    public function __construct($path, $format, $TTL = 3600, $debug = FALSE) {
+    public function __construct($path, $format = 'phparray', $TTL = 3600, $debug = FALSE) {
         $this->path = $path;
         $this->format = $format;
         $this->TTL = $TTL;

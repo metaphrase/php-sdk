@@ -15,7 +15,7 @@ use metaphrase\phpsdk\MetaphraseException;
  * @package metaphrase
  * @subpackage phpsdk
  * @copyright TBA
- * @version 005
+ * @version 0.0.5
  * @uses curl_init curl
  * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @todo Migrate to metaphrase api
@@ -24,7 +24,6 @@ use metaphrase\phpsdk\MetaphraseException;
 class Metaphrase {
 
     const VERSION = '0.0.5';
-    const VERSION_INTEGER = 005;
     const METHOD_GET = 'GET';
     const METHOD_HEAD = 'HEAD';
     const METHOD_POST = 'POST';
@@ -91,9 +90,8 @@ class Metaphrase {
      * @param metaphrase\phpsdk\ICache $cache_engine
      * @return Returns an instance of Translate
      */
-    public function __construct($api_key, $settings = [],
-        metaphrase\phpsdk\ICache $cache_engine = NULL) {
-        
+    public function __construct($api_key, $settings = [], metaphrase\phpsdk\ICache $cache_engine = NULL) {
+
         //Set API key
         $this->api_key = $api_key;
 
@@ -256,7 +254,7 @@ class Metaphrase {
         if ($use_cached && $r && isset($r['translation'])) {
             $this->cache_engine->store($project_id, $language_code, $r['translation']);
         }
-        
+
         return $r['translation'];
     }
 

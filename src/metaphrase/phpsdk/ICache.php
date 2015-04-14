@@ -27,7 +27,7 @@ interface ICache {
      * @param array $data
      * @param array $type [Optional] Storage data type. Default is project
      */
-    public function store($id, $language_code, $data, $type= ICache::TYPE_PROJECT);
+    public function store($id, $language_code, $data, $type = ICache::TYPE_PROJECT);
 
     /**
      * Get stored translated data from engine
@@ -36,5 +36,5 @@ interface ICache {
      * @param array $type [Optional] Storage data type. Default is project
      * @return array|NULL Translated data
      */
-    public function fetch($id, $language_code, $type= ICache::TYPE_PROJECT);
+    public function fetch($id, $language_code, $type = ICache::TYPE_PROJECT);
 }

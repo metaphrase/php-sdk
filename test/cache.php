@@ -32,7 +32,7 @@ try {
     $translated = $metaphrase->fetch(
         $settings['project_id'], $settings['language_code']);
 } catch (metaphrase\phpsdk\MetaphraseException $e) {
-    print( $e->getMessage());
+    print($e->getMessage());
     die();
 }
 

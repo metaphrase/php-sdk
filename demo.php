@@ -14,7 +14,7 @@ $settings = [
 
 try {
     //Initialize Metaphrase class
-    $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY'],[
+    $metaphrase = new metaphrase\phpsdk\Metaphrase($settings['API_KEY'], [
         metaphrase\phpsdk\Metaphrase::SETTING_CURLOPT_CONNECTTIMEOUT => 0
     ]);
     

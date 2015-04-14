@@ -136,9 +136,9 @@ class Metaphrase {
 
         //Extract flags
         //Is the request binary
-        $binary = ( $flags & self::REQUEST_BINARY ) != 0;
+        $binary = ($flags & self::REQUEST_BINARY) != 0;
         //If the request paramters form encoded
-        $form_encoded = !(( $flags & self::REQUEST_NOT_URL_ENCODED ) != 0);
+        $form_encoded = !(($flags & self::REQUEST_NOT_URL_ENCODED) != 0);
 
         //Initialize headers
         $headers = array(
@@ -283,7 +283,7 @@ class Metaphrase {
      * Get current caching engine
      * @return object|NULL
      */
-    public function get_cache_engine(){
+    public function get_cache_engine() {
         return $this->cache_engine;
     }
 }

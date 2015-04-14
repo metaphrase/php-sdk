@@ -27,7 +27,7 @@ class Memcached implements ICache {
      * @param array $connection Memcached connection settings.
      * @param integer $TTL [Optional] Life time of stored translated data.
      */
-    public function __construct($path, $format, $TTL = 3600, $debug = FALSE) {
+    public function __construct($connection, $TTL = 3600, $debug = FALSE) {
 
         $this->TTL = $TTL;
         $this->debug = $debug;

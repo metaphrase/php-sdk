@@ -20,7 +20,7 @@ class Translated {
 
     /**
      * Initialize class
-     * @param object $metaphrase
+     * @param Metaphrase $metaphrase
      */
     public function __construct(Metaphrase $metaphrase) {
         $this->metaphrase = $metaphrase;

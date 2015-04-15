@@ -15,7 +15,7 @@ use metaphrase\phpsdk\MetaphraseException;
  * @package metaphrase
  * @subpackage phpsdk
  * @copyright TBA
- * @version 0.1.0
+ * @version 0.1.1
  * @uses curl_init curl
  * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @todo Migrate to metaphrase api
@@ -23,7 +23,7 @@ use metaphrase\phpsdk\MetaphraseException;
  */
 class Metaphrase {
 
-    const VERSION = '0.1.0';
+    const VERSION = '0.1.1';
     const METHOD_GET = 'GET';
     const METHOD_HEAD = 'HEAD';
     const METHOD_POST = 'POST';
@@ -177,10 +177,10 @@ class Metaphrase {
 
         //Switch on HTTP Request method
         switch ($method) {
-            case self::METHOD_GET : //On METHOD_GET 
-            case self::METHOD_HEAD : //On METHOD_HEAD 
+            case self::METHOD_GET: //On METHOD_GET 
+            case self::METHOD_HEAD: //On METHOD_HEAD 
                 break;
-            case self::METHOD_POST : //On METHOD_POST
+            case self::METHOD_POST: //On METHOD_POST
                 curl_setopt($handle, CURLOPT_POST, true);
 
                 if ($data && $form_encoded) { //Encode fields if required ( URL ENCODED )
@@ -190,13 +190,13 @@ class Metaphrase {
                     curl_setopt($handle, CURLOPT_POSTFIELDS, $data);
                 }
                 break;
-            case self::METHOD_PUT : //On METHOD_PUT
+            case self::METHOD_PUT: //On METHOD_PUT
                 curl_setopt($handle, CURLOPT_CUSTOMREQUEST, self::METHOD_PUT);
                 if ($data) {
                     curl_setopt($handle, CURLOPT_POSTFIELDS, json_encode($data));
                 }
                 break;
-            case self::METHOD_DELETE : //On METHOD_DELETE
+            case self::METHOD_DELETE: //On METHOD_DELETE
                 curl_setopt($handle, CURLOPT_CUSTOMREQUEST, self::METHOD_DELETE);
                 break;
             default:

@@ -58,5 +58,16 @@ class Translated {
 
         return $r['translation'];
     }
+    
+    /**
+     * Get keyword translations
+     * 
+     * @param integer $keyword_id
+     * @param string|array $language_codes
+     * @param boolean $use_cached
+     */
+    public function keyword($keyword_id, $language_codes, $use_cached = TRUE) {
+        throw new \Exception('not implemented');
+    }
 
 }

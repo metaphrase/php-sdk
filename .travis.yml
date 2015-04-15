@@ -12,6 +12,6 @@ php:
   
 before_script:
 #  - "sudo composer self-update"
-  - "sudo apt-get -qq update --force-yes > /dev/null"
-  - "sudo apt-get -qq install curl php5-curl --force-yes > /dev/nul"
+  - sudo apt-get -qq update --force-yes
+  - sudo apt-get -qq install curl php5-curl --force-yes
   - composer install

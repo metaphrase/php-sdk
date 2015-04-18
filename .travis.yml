@@ -1,0 +1,18 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+# list any PHP version you want to test against
+php:
+  # using major version aliases
+
+  # aliased to a recent 5.6.x version
+  - 5.6
+  
+before_script:
+#  - "sudo composer self-update"
+  - mkdir tests/tmp
+  - curl --version
+  - sudo apt-get -qq update --force-yes
+  - sudo apt-get -qq install curl php5-curl --force-yes
+  - composer self-update
+  - composer install --no-dev

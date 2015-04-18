@@ -4,7 +4,7 @@
     "license": "TBA",
     "type": "library",
     "keywords": [
-	"localization"
+        "localization"
     ],
     "homepage": "https://translate.nohponex.gr",
     "authors": [
@@ -21,10 +21,17 @@
     },
     "require": {
         "php": ">=5.5",
-        "lib-curl" : ">=7.35.0"
+        "lib-curl" : ">=7.0.0"
         
     },
     "require-dev": {
-        "phpunit/phpunit": "4.6.*"
+        "phpunit/phpunit": "4.*",
+        "phpunit/phpunit-skeleton-generator": "*",
+	"pdepend/pdepend" : "~2.0"
+    },
+    "archive": {
+        "exclude": [
+		"demo/", "test/", "/*.test", "tests", "demo.php", "build/"
+	]
     }
 }

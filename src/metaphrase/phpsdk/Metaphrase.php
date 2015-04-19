@@ -1,4 +1,23 @@
 <?php
+/*
+    Metaphrase php SDK
+    Copyright (C) 2014-2015 Spafaridis Xenophon
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+    USA
+ */
 
 namespace metaphrase\phpsdk;
 
@@ -11,24 +30,25 @@ use metaphrase\phpsdk\MetaphraseException;
  * And execute the available API methods
  * 
  * <strong>Currently uses old translate API</strong>
+ * @license http://www.gnu.org/licenses/lgpl-2.1.html LGPL License 2.1
+ * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @author Spafaridis Xenophon <nohponex@gmail.com>
  * @package metaphrase
  * @subpackage phpsdk
- * @copyright TBA
- * @version 0.1.1
+ * @version 0.1.2
  * @uses curl_init curl
- * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @todo Migrate to metaphrase api
  * @todo Make sure it can be work as a script in order to assist other SDKs to download and cache the translated data
  */
 class Metaphrase {
 
-    const VERSION = '0.1.1';
+    const VERSION = '0.1.2';
     const METHOD_GET = 'GET';
     const METHOD_HEAD = 'HEAD';
     const METHOD_POST = 'POST';
     const METHOD_DELETE = 'DELETE';
     const METHOD_PUT = 'PUT';
+    
     const REQUEST_EMPTY_FLAG = 0;
     const REQUEST_BINARY = 1;
     const REQUEST_NOT_URL_ENCODED = 2;

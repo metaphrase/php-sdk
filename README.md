@@ -12,7 +12,7 @@ Installation
 At your composer.json file include:
 
 ```json
-"repositories": [
+    "repositories": [
         { "type": "vcs", "url": "git@github.com:metaphrase/php-sdk.git" }
     ],
     "require": {

@@ -1,11 +1,11 @@
 <?php
-
 namespace metaphrase\phpsdk\cache;
 
 use \metaphrase\phpsdk\ICache;
+
 /**
  * Simle cache
- * 
+ *
  * For demonstration purpose only, not useful in production.
  * Cache implementation using variables
  * @license http://www.gnu.org/licenses/lgpl-2.1.html LGPL License 2.1
@@ -14,7 +14,8 @@ use \metaphrase\phpsdk\ICache;
  * @package metaphrase
  * @subpackage phpsdk
  */
-class Simple implements ICache {
+class Simple implements ICache
+{
 
     /**
      * Internal storage variable
@@ -42,7 +43,7 @@ class Simple implements ICache {
         $key = md5(implode('-', [$type, $id, $language_code]));
 
         self::$storage[$key] = $data;
-        return FALSE;
+        return false;
     }
 
     /**

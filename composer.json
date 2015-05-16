@@ -30,7 +30,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.*",
-        "phpunit/phpunit-skeleton-generator": "*"
+        "phpunit/phpunit-skeleton-generator": "*",
+        "squizlabs/php_codesniffer": "2.*"
     },
     "archive": {
         "exclude": [

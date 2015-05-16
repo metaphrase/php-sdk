@@ -4,7 +4,7 @@ namespace metaphrase\phpsdk;
 
 /**
  * ICache cache engine interface
- * 
+ *
  * @license http://www.gnu.org/licenses/lgpl-2.1.html LGPL License 2.1
  * @copyright (c) 2014-2015, Spafaridis Xenophon
  * @author Spafaridis Xenophon <nohponex@gmail.com>
@@ -12,7 +12,8 @@ namespace metaphrase\phpsdk;
  * @subpackage phpsdk
  * @todo Work in progress
  */
-interface ICache {
+interface ICache
+{
     /**
      * Cached datatype project, used to store all project's translations for a language
      */

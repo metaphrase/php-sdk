@@ -1,0 +1,30 @@
+{
+  "name": "php-sdk",
+  "version": "1.0.0",
+  "description": "metaphrase php-sdk build tools",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metaphrase/php-sdk.git"
+  },
+  "author": "Spafaridis Xenophon <nohponex@gmail.com>",
+  "license": "LGPL-2.1",
+  "bugs": {
+    "url": "https://github.com/metaphrase/php-sdk/issues"
+  },
+  "homepage": "https://github.com/metaphrase/php-sdk",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-php-analyzer": "^0.1.0",
+    "grunt-phpcs": "^0.4.0",
+    "grunt-phplint": "0.0.5",
+    "grunt-phpunit": "^0.3.6"
+  }
+}

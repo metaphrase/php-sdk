@@ -92,8 +92,8 @@ class Metaphrase {
      * Base url of Metaphrase API
      */
     private $API_URL = 'https://translate.nohponex.gr/';
-    private $authentication_credentials = FALSE;
-    private $authentication_header = FALSE;
+    private $auth_credentials = FALSE;
+    private $auth_header = FALSE;
     
     public $keyword;
     public $project;
@@ -149,7 +149,9 @@ class Metaphrase {
      * @return array Returns an array with the response code and the response,
      * if the accept parameter is set to json the the response will be decoded as json
      */
-    public function request($resource, $method = self::METHOD_GET, $data = NULL, $flags = self::REQUEST_EMPTY_FLAG, $accept = 'application/json', $encoding = NULL) {
+    public function request($resource, $method = self::METHOD_GET, $data = NULL,
+        $flags = self::REQUEST_EMPTY_FLAG, $accept = 'application/json',
+        $encoding = NULL) {
 
         //Construct request url
         $url = $this->API_URL . $resource . '&api_key=' . $this->api_key;
@@ -163,7 +165,7 @@ class Metaphrase {
         //Initialize headers
         $headers = array(
             'Accept: ' . $accept,
-            /* $this->authentication_header */
+            /* $this->auth_header */
         );
 
         //If request's data is encoded provide the Contenty type Header

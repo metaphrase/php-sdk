@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Interface metaphrase\phpsdk\ICache | metaphrase/php-sdk</title>
+	<title>Class metaphrase\phpsdk\cache\Memcached | metaphrase/php-sdk</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -18,7 +18,7 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li>
-							<a href="namespace-metaphrase.phpsdk.html" title="Summary of metaphrase\phpsdk"><span>Namespace</span></a>
+							<a href="namespace-metaphrase.phpsdk.cache.html" title="Summary of metaphrase\phpsdk\cache"><span>Namespace</span></a>
 						</li>
 						<li class="active">
 <span>Class</span>						</li>
@@ -64,7 +64,7 @@
 							phpsdk<span></span>
 						</a>
 							<ul>
-					<li>
+					<li class="active">
 						<a href="namespace-metaphrase.phpsdk.cache.html">
 							cache						</a>
 							</li>
@@ -80,14 +80,12 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-metaphrase.phpsdk.Metaphrase.html">Metaphrase</a></li>
+				<li><a href="class-metaphrase.phpsdk.cache.File.html">File</a></li>
+				<li class="active"><a href="class-metaphrase.phpsdk.cache.Memcached.html">Memcached</a></li>
+				<li><a href="class-metaphrase.phpsdk.cache.Mysql.html">Mysql</a></li>
+				<li><a href="class-metaphrase.phpsdk.cache.Simple.html">Simple</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li class="active"><a href="class-metaphrase.phpsdk.ICache.html">ICache</a></li>
-				<li><a href="class-metaphrase.phpsdk.MetaphraseException.html">MetaphraseException</a></li>
-			</ul>
 
 
 
@@ -101,26 +99,28 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Interface ICache</h1>
+	<h1>Class Memcached</h1>
 
 
 	<div class="description">
-	<p>ICache cache engine interface</p>
+	<p>File cache</p>
+
+<p>Cache implementation using Memcached memory caching.</p>
 	</div>
 
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+<b><span>metaphrase\phpsdk\cache\Memcached</span></b>			
+			 implements 
+				<a href="class-metaphrase.phpsdk.ICache.html"><span>metaphrase\phpsdk\ICache</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 
 
-	<div>
-		<h3>Direct known implementers</h3>
-		<p class="elementList">
-			<code><a href="class-metaphrase.phpsdk.cache.File.html">metaphrase\phpsdk\cache\File</a></code>, 
-			<code><a href="class-metaphrase.phpsdk.cache.Memcached.html">metaphrase\phpsdk\cache\Memcached</a></code>, 
-			<code><a href="class-metaphrase.phpsdk.cache.Mysql.html">metaphrase\phpsdk\cache\Mysql</a></code>, 
-			<code><a href="class-metaphrase.phpsdk.cache.Simple.html">metaphrase\phpsdk\cache\Simple</a></code>
-		</p>
-	</div>
 
 
 
@@ -128,7 +128,7 @@
 	<div class="alert alert-info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a><br>
+		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a>\<a href="namespace-metaphrase.phpsdk.cache.html">cache</a><br>
 		<b>Package:</b> metaphrase\phpsdk<br>
 
 				<b>Copyright:</b>
@@ -137,15 +137,55 @@
 				<a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL License 2.1</a><br>
 				<b>Author:</b>
 				Spafaridis Xenophon <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;">&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;</a><br>
+				<b>Link:</b>
+				<a href="http://memcached.org/">Memcached website</a><br>
 				<b>Todo:</b>
 				Work in progress<br>
-			<b>Located at</b> metaphrase/phpsdk/ICache.php		<br>
+			<b>Located at</b> metaphrase/phpsdk/cache/Memcached.php		<br>
 	</div>
 
 
 
 		<h2>Methods summary</h2>
 		<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code>__construct( <span>array <var>$connection</var></span>, <span>integer <var>$TTL</var> = <span class="php-num">3600</span></span>, <span> <var>$debug</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+
+			<div class="description short">
+				<p>Initialize cache engine</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initialize cache engine</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$connection</var></dt>
+						<dd>Memcached connection settings.</dd>
+						<dt><var>$TTL</var></dt>
+						<dd>[Optional] Life time of stored translated data.</dd>
+						<dt><var>$debug</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
 		<tr data-order="store" id="_store">
 
 			<td class="attributes"><code>
@@ -157,7 +197,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_store">#</a>
-			<code>store( <span>integer <var>$id</var></span>, <span>string <var>$language_code</var></span>, <span>array <var>$data</var></span>, <span>array <var>$type</var> = <code><a href="class-metaphrase.phpsdk.ICache.html#TYPE_PROJECT">metaphrase\phpsdk\ICache::<b>TYPE_PROJECT</b></a></code></span> )</code>
+			<code>store( <span>integer <var>$id</var></span>, <span>string <var>$language_code</var></span>, <span>array <var>$data</var></span>, <span>array <var>$type</var> = metaphrase\phpsdk\cache\ICache::TYPE_PROJECT</span> )</code>
 
 			<div class="description short">
 				<p>Store translated data in egnine</p>
@@ -183,6 +223,8 @@
 
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-metaphrase.phpsdk.ICache.html#_store">metaphrase\phpsdk\ICache::store()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -197,7 +239,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_fetch">#</a>
-			<code>fetch( <span>integer <var>$id</var></span>, <span>string <var>$language_code</var></span>, <span>array <var>$type</var> = <code><a href="class-metaphrase.phpsdk.ICache.html#TYPE_PROJECT">metaphrase\phpsdk\ICache::<b>TYPE_PROJECT</b></a></code></span> )</code>
+			<code>fetch( <span>integer <var>$id</var></span>, <span>string <var>$language_code</var></span>, <span>array <var>$type</var> = metaphrase\phpsdk\cache\ICache::TYPE_PROJECT</span> )</code>
 
 			<div class="description short">
 				<p>Get stored translated data from engine</p>
@@ -225,6 +267,8 @@
 
 
 
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-metaphrase.phpsdk.ICache.html#_fetch">metaphrase\phpsdk\ICache::fetch()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -239,55 +283,12 @@
 
 
 		<h2>Constants summary</h2>
-		<table class="summary table table-bordered table-striped constants" id="constants">
-		<tr data-order="TYPE_PROJECT" id="TYPE_PROJECT">
 
-			<td class="attributes"><code>string</code></td>
-			<td class="name">
-				<code>
-<b>TYPE_PROJECT</b>				</code>
-
-				<div class="description short">
-					<p>Cached datatype project, used to store all project's translations for a language</p>
-				</div>
-
-				<div class="description detailed hidden">
-					<p>Cached datatype project, used to store all project's translations for a language</p>
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#TYPE_PROJECT" class="anchor">#</a>
-					<code><span class="php-quote">'project'</span></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="TYPE_KEYWORD" id="TYPE_KEYWORD">
-
-			<td class="attributes"><code>string</code></td>
-			<td class="name">
-				<code>
-<b>TYPE_KEYWORD</b>				</code>
-
-				<div class="description short">
-					<p>Cached datatype keyword, used to store keyword's translations for a language</p>
-				</div>
-
-				<div class="description detailed hidden">
-					<p>Cached datatype keyword, used to store keyword's translations for a language</p>
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#TYPE_KEYWORD" class="anchor">#</a>
-					<code><span class="php-quote">'keyword'</span></code>
-				</div>
-			</td>
-		</tr>
-		</table>
-
+		<h3>Constants inherited from <a href="class-metaphrase.phpsdk.ICache.html#constants">metaphrase\phpsdk\ICache</a></h3>
+		<p class="elementList">
+			<code><a href="class-metaphrase.phpsdk.ICache.html#TYPE_KEYWORD"><b>TYPE_KEYWORD</b></a></code>, 
+			<code><a href="class-metaphrase.phpsdk.ICache.html#TYPE_PROJECT"><b>TYPE_PROJECT</b></a></code>
+		</p>
 
 
 

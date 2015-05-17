@@ -81,6 +81,8 @@
 			<h3>Classes</h3>
 			<ul>
 				<li class="active"><a href="class-metaphrase.phpsdk.cache.File.html">File</a></li>
+				<li><a href="class-metaphrase.phpsdk.cache.Memcached.html">Memcached</a></li>
+				<li><a href="class-metaphrase.phpsdk.cache.Mysql.html">Mysql</a></li>
 				<li><a href="class-metaphrase.phpsdk.cache.Simple.html">Simple</a></li>
 			</ul>
 
@@ -129,10 +131,12 @@
 		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a>\<a href="namespace-metaphrase.phpsdk.cache.html">cache</a><br>
 		<b>Package:</b> metaphrase\phpsdk<br>
 
+				<b>Copyright:</b>
+				(c) 2014-2015, Spafaridis Xenophon<br>
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL License 2.1</a><br>
 				<b>Author:</b>
 				Spafaridis Xenophon <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;">&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;</a><br>
-				<b>Todo:</b>
-				Work in progress<br>
 				<b>Todo:</b>
 				clean old files<br>
 				<b>Todo:</b>
@@ -155,7 +159,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code>__construct( <span> <var>$path</var></span>, <span> <var>$format</var></span>, <span> <var>$TTL</var> = <span class="php-num">3600</span></span>, <span> <var>$debug</var> = <span class="php-keyword1">FALSE</span></span> )</code>
+			<code>__construct( <span>string <var>$path</var></span>, <span>string <var>$format</var> = <span class="php-quote">'phparray'</span></span>, <span>integer <var>$TTL</var> = <span class="php-num">3600</span></span>, <span> <var>$debug</var> = <span class="php-keyword1">FALSE</span></span> )</code>
 
 			<div class="description short">
 				<p>Initialize cache engine</p>
@@ -165,6 +169,17 @@
 				<p>Initialize cache engine</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$path</var></dt>
+						<dd>Temporary filesystem directory to store the translated data. MUST be writeable.</dd>
+						<dt><var>$format</var></dt>
+						<dd>[Optional] Stored file format. Default is serialized php array</dd>
+						<dt><var>$TTL</var></dt>
+						<dd>[Optional] Life time of stored translated data.</dd>
+						<dt><var>$debug</var></dt>
+						<dd></dd>
+					</dl></div>
 
 
 

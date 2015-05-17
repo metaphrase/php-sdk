@@ -128,13 +128,13 @@ And execute the available API methods</p>
 		<b>Package:</b> metaphrase\phpsdk<br>
 
 				<b>Copyright:</b>
-				TBA<br>
-				<b>Copyright:</b>
 				(c) 2014-2015, Spafaridis Xenophon<br>
+				<b>License:</b>
+				<a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL License 2.1</a><br>
 				<b>Author:</b>
 				Spafaridis Xenophon <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;">&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;</a><br>
 				<b>Version:</b>
-				005<br>
+				0.1.2<br>
 				<b>Uses:</b>
 				curl_init curl<br>
 				<b>Todo:</b>
@@ -159,7 +159,7 @@ And execute the available API methods</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code>__construct( <span>string <var>$api_key</var></span>, <span>array <var>$settings</var> = []</span>, <span> <var>$cache_engine</var> = <span class="php-keyword1">TRUE</span></span> )</code>
+			<code>__construct( <span>string <var>$api_key</var></span>, <span>array <var>$settings</var> = []</span>, <span><code><a href="class-metaphrase.phpsdk.ICache.html">metaphrase\phpsdk\ICache</a></code> <var>$cache_engine</var> = <span class="php-keyword1">NULL</span></span> )</code>
 
 			<div class="description short">
 				<p>Create a new instance of the class using user's email and password
@@ -192,7 +192,58 @@ as authentication credentials</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="fetch" id="_fetch">
+		<tr data-order="request" id="_request">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_request">#</a>
+			<code>request( <span>string <var>$resource</var></span>, <span> <var>$method</var> = <code><a href="class-metaphrase.phpsdk.Metaphrase.html#METHOD_GET">metaphrase\phpsdk\Metaphrase::<b>METHOD_GET</b></a></code></span>, <span> <var>$data</var> = <span class="php-keyword1">NULL</span></span>, <span> <var>$flags</var> = <code><a href="class-metaphrase.phpsdk.Metaphrase.html#REQUEST_EMPTY_FLAG">metaphrase\phpsdk\Metaphrase::<b>REQUEST_EMPTY_FLAG</b></a></code></span>, <span> <var>$accept</var> = <span class="php-quote">'application/json'</span></span>, <span> <var>$encoding</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+			<div class="description short">
+				<p>Perform an cURL request to API server,
+this is an internal function</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Perform an cURL request to API server,
+this is an internal function</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$resource</var></dt>
+						<dd>Resource fraction of the url for example fetch/?name=xx</dd>
+						<dt><var>$method</var></dt>
+						<dd></dd>
+						<dt><var>$data</var></dt>
+						<dd></dd>
+						<dt><var>$flags</var></dt>
+						<dd></dd>
+						<dt><var>$accept</var></dt>
+						<dd></dd>
+						<dt><var>$encoding</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br><p>Returns an array with the response code and the response,
+if the accept parameter is set to json the the response will be decoded as json</p>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetch" id="_fetch" class="deprecated">
 
 			<td class="attributes"><code>
 				 public 
@@ -212,6 +263,10 @@ as authentication credentials</p>
 			<div class="description detailed hidden">
 				<p>Get all translation keys</p>
 
+					<h4>Deprecated</h4>
+					<div class="list">
+							since version 0.1.0 Use $this->translated<br>
+					</div>
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
@@ -238,7 +293,7 @@ as authentication credentials</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="add_key" id="_add_key">
+		<tr data-order="add_key" id="_add_key" class="deprecated">
 
 			<td class="attributes"><code>
 				 public 
@@ -258,6 +313,10 @@ as authentication credentials</p>
 			<div class="description detailed hidden">
 				<p>Add keyword to a project</p>
 
+					<h4>Deprecated</h4>
+					<div class="list">
+							since version 0.1.0 use $this->keyword->post<br>
+					</div>
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
@@ -313,6 +372,10 @@ as authentication credentials</p>
 
 
 
+					<h4>Todo</h4>
+					<div class="list">
+							implement<br>
+					</div>
 
 
 			</div>
@@ -347,6 +410,43 @@ as authentication credentials</p>
 						<dd></dd>
 					</dl></div>
 
+
+
+					<h4>Todo</h4>
+					<div class="list">
+							implement<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get_cache_engine" id="_get_cache_engine">
+
+			<td class="attributes"><code>
+				 public 
+				object|null
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get_cache_engine">#</a>
+			<code>get_cache_engine( )</code>
+
+			<div class="description short">
+				<p>Get current caching engine</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get current caching engine</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						object|null
+					</div>
 
 
 
@@ -385,30 +485,7 @@ as authentication credentials</p>
 			<td class="value">
 				<div>
 					<a href="#VERSION" class="anchor">#</a>
-					<code><span class="php-quote">'0.0.5'</span></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="VERSION_INTEGER" id="VERSION_INTEGER">
-
-			<td class="attributes"><code>integer</code></td>
-			<td class="name">
-				<code>
-<b>VERSION_INTEGER</b>				</code>
-
-				<div class="description short">
-					
-				</div>
-
-				<div class="description detailed hidden">
-					
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#VERSION_INTEGER" class="anchor">#</a>
-					<code><span class="php-num">005</span></code>
+					<code><span class="php-quote">'0.1.2'</span></code>
 				</div>
 			</td>
 		</tr>
@@ -694,6 +771,54 @@ Default timeout is 0 (zero) which means it never times out during transfer.</p>
 			<td class="value">
 				<div>
 					<a href="#$keyword" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="project" id="$project">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+<var>$project</var>
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$project" class="anchor">#</a>
+					<code></code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="translated" id="$translated">
+			<td class="attributes"><code>
+				public  
+				
+			</code></td>
+
+			<td class="name">
+<var>$translated</var>
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$translated" class="anchor">#</a>
 					<code></code>
 				</div>
 			</td>

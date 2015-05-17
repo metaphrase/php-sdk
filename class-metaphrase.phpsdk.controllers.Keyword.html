@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class metaphrase\phpsdk\MetaphraseException | metaphrase/php-sdk</title>
+	<title>Class metaphrase\phpsdk\controllers\Keyword | metaphrase/php-sdk</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?08b23951ef4599ca9cbf1f902d0e8290c9653ddd">
 	<link rel="stylesheet" href="resources/style.css?062e9e59e0b8c44fbaaded5b7ffc21f907b78669">
@@ -18,7 +18,7 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li>
-							<a href="namespace-metaphrase.phpsdk.html" title="Summary of metaphrase\phpsdk"><span>Namespace</span></a>
+							<a href="namespace-metaphrase.phpsdk.controllers.html" title="Summary of metaphrase\phpsdk\controllers"><span>Namespace</span></a>
 						</li>
 						<li class="active">
 <span>Class</span>						</li>
@@ -68,7 +68,7 @@
 						<a href="namespace-metaphrase.phpsdk.cache.html">
 							cache						</a>
 							</li>
-					<li>
+					<li class="active">
 						<a href="namespace-metaphrase.phpsdk.controllers.html">
 							controllers						</a>
 							</li>
@@ -80,14 +80,11 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-metaphrase.phpsdk.Metaphrase.html">Metaphrase</a></li>
+				<li class="active"><a href="class-metaphrase.phpsdk.controllers.Keyword.html">Keyword</a></li>
+				<li><a href="class-metaphrase.phpsdk.controllers.Project.html">Project</a></li>
+				<li><a href="class-metaphrase.phpsdk.controllers.Translated.html">Translated</a></li>
 			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-metaphrase.phpsdk.ICache.html">ICache</a></li>
-				<li class="active"><a href="class-metaphrase.phpsdk.MetaphraseException.html">MetaphraseException</a></li>
-			</ul>
 
 
 
@@ -101,26 +98,15 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class MetaphraseException</h1>
+	<h1>Class Keyword</h1>
 
 
 	<div class="description">
-	<p>Metaphrase exception class</p>
+	<p>keyword controller</p>
+
+<p>Expands SDK's methods allowing to manage keywords</p>
 	</div>
 
-	<dl class="tree well">
-		<dd style="padding-left:0px">
-Exception
-			
-			
-		</dd>
-		<dd style="padding-left:30px">
-			<img src="resources/inherit.png" alt="Extended by">
-<b><span>metaphrase\phpsdk\MetaphraseException</span></b>			
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -132,7 +118,7 @@ Exception
 	<div class="alert alert-info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a><br>
+		<b>Namespace:</b> <a href="namespace-metaphrase.html">metaphrase</a>\<a href="namespace-metaphrase.phpsdk.html">phpsdk</a>\<a href="namespace-metaphrase.phpsdk.controllers.html">controllers</a><br>
 		<b>Package:</b> metaphrase\phpsdk<br>
 
 				<b>Copyright:</b>
@@ -141,7 +127,9 @@ Exception
 				<a href="http://www.gnu.org/licenses/lgpl-2.1.html">LGPL License 2.1</a><br>
 				<b>Author:</b>
 				Spafaridis Xenophon <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;">&#x6e;o&#104;&#112;&#x6f;&#x6e;&#101;&#120;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;.&#99;&#111;&#x6d;</a><br>
-			<b>Located at</b> metaphrase/phpsdk/MetaphraseException.php		<br>
+				<b>Todo:</b>
+				Work in progress<br>
+			<b>Located at</b> metaphrase/phpsdk/controllers/Keyword.php		<br>
 	</div>
 
 
@@ -159,59 +147,128 @@ Exception
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code>__construct( <span> <var>$error</var></span>, <span> <var>$code</var> = <span class="php-num">400</span></span> )</code>
+			<code>__construct( <span><code><a href="class-metaphrase.phpsdk.Metaphrase.html">metaphrase\phpsdk\Metaphrase</a></code> <var>$metaphrase</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Initialize class</p>
 			</div>
 
 			<div class="description detailed hidden">
+				<p>Initialize class</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$metaphrase</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="post" id="_post">
+
+			<td class="attributes"><code>
+				 public 
 				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_post">#</a>
+			<code>post( <span> <var>$keyword_group_id</var></span>, <span> <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Add new keyword</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Add new keyword</p>
+
+
+
+
+
+					<h4>Todo</h4>
+					<div class="list">
+							Convert to metaphrase API<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get" id="_get">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get">#</a>
+			<code>get( <span> <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Get a keyword</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get a keyword</p>
 
 
 
 
 
 
-					<h4>Overrides</h4>
-					<div class="list"><code>Exception::__construct</code></div>
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="delete" id="_delete">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_delete">#</a>
+			<code>delete( <span> <var>$id</var></span> )</code>
+
+			<div class="description short">
+				<p>Delete a keyword</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Delete a keyword</p>
+
+
+
+
+
+
 
 			</div>
 			</div></td>
 		</tr>
 		</table>
 
-		<h3>Methods inherited from Exception</h3>
-		<p class="elementList">
-			<code>__toString()</code>, 
-			<code>getCode()</code>, 
-			<code>getFile()</code>, 
-			<code>getLine()</code>, 
-			<code>getMessage()</code>, 
-			<code>getPrevious()</code>, 
-			<code>getTrace()</code>, 
-			<code>getTraceAsString()</code>
-		</p>
 
 
 		<h3>Magic methods summary</h3>
 
 
 
-
-
-
-
-
-		<h2>Properties summary</h2>
-
-		<h3>Properties inherited from Exception</h3>
-		<p class="elementList">
-			<code><var>$code</var></code>, 
-			<code><var>$file</var></code>, 
-			<code><var>$line</var></code>, 
-			<code><var>$message</var></code>
-		</p>
 
 
 

@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     grunt.initConfig({
         phpcs: {
             application: {
@@ -26,6 +26,17 @@ module.exports = function (grunt) {
             },
             all: ['src/metaphrase/phpsdk/*.php', 'src/metaphrase/phpsdk/cache/*.php', 'src/metaphrase/phpsdk/controllers/*.php']
         },
+        shell: {
+            'prepare-doc': {
+                command: './doc.sh'
+            }
+        },
+        'gh-pages': {
+            options: {
+                base: 'doc'
+            },
+            src: ['**']
+        }
     });
     function log(err, stdout, stderr, cb) {
         console.log(stdout);
@@ -36,5 +47,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-phpcs');
     grunt.loadNpmTasks('grunt-php-analyzer');
 
+    grunt.loadNpmTasks('grunt-gh-pages');
+    grunt.loadNpmTasks('grunt-shell');
+
     grunt.registerTask('default', ['phplint:all', 'phpcs', 'php_analyzer:application']);
+    grunt.registerTask('pages', ['shell:prepare-doc', 'gh-pages']);
 };

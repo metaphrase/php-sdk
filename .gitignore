@@ -6,3 +6,4 @@
 /build/
 /tests/tmp/
 /node_modules
+.grunt/

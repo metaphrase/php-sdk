@@ -22,9 +22,11 @@
   "homepage": "https://github.com/metaphrase/php-sdk",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-gh-pages": "^0.10.0",
     "grunt-php-analyzer": "^0.1.0",
     "grunt-phpcs": "^0.4.0",
     "grunt-phplint": "0.0.5",
-    "grunt-phpunit": "^0.3.6"
+    "grunt-phpunit": "^0.3.6",
+    "grunt-shell": "^1.1.2"
   }
 }
